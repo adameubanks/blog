@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @post.title %>
-</p>
+</h1>
 
-<p>
-  <strong>Body:</strong>
+<h3>
   <%= @post.body %>
-</p>
+</h3>
 
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
