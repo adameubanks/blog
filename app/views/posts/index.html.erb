@@ -5,9 +5,3 @@
 <% end %>
 
 <br>
-
-<% if user_signed_in? %>
-<%= link_to 'New Post', new_post_path %>
-<% else %>
-<%= link_to 'Admin Login', new_user_session_path %>
-<% end %>
