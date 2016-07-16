@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
-
-<h1>
+<%= content_for(:title, @post.title) %>
+<div class="page-header">
+<h1 align='center'>
   <%= @post.title %>
 </h1>
-
-<h3>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 align='center'>
   <%= @post.body %>
 </h3>
+</div>
+</div>
 
 <% if user_signed_in? %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<div class="btn-group pull-right">
+   	<div class="btn-group">
+   		<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
+   		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+   	</div>
+  </div>
 <% end %>
-<%= link_to 'Back', posts_path %>
